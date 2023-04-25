@@ -17,13 +17,13 @@ return require('packer').startup(function(use)
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
   -- 这里写插件地址
-  use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+  use({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
   use {'neoclide/coc.nvim', branch = 'release'}
   use {'jiangmiao/auto-pairs'}
   use {'vim-airline/vim-airline'}
   use {'nvim-tree/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use({"iamcco/markdown-preview.nvim",run = function() vim.fn["mkdp#util#install"]() end,})
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use {'puremourning/vimspector'}
   if packer_bootstrap then
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

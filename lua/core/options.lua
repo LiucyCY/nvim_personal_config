@@ -38,3 +38,4 @@ opt.splitbelow = true
 -- == 键位 ==
 -- ==========
 vim.g.mapleader = " "
+vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'
