@@ -22,8 +22,10 @@ return require('packer').startup(function(use)
   use {'jiangmiao/auto-pairs'}
   use {'vim-airline/vim-airline'}
   use {'nvim-tree/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  use({"iamcco/markdown-preview.nvim",run = function() vim.fn["mkdp#util#install"]() end,})
-  use {'puremourning/vimspector'}
+  use {'mfussenegger/nvim-dap'}
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use {'theHamsta/nvim-dap-virtual-text'}
+  -- use({"iamcco/markdown-preview.nvim",run = function() vim.fn["mkdp#util#install"]() end,})
   if packer_bootstrap then
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

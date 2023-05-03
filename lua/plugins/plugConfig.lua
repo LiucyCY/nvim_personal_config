@@ -24,12 +24,3 @@ keymap.set("n", "<leader>q", ":MarkdownPreviewStop<CR>")
 -- 只有md文件才能使用
 --
 
--- ====================
--- ==== VimSpector ====
--- ====================
-keymap.set("n", "<leader>r","<Plug>VimspectorContinue")
-keymap.set("n", "<leader>b","<Plug>VimspectorToggleBreakpoint")
-keymap.set("n", "<leader>si","<Plug>VimspectorStepInto")
-keymap.set("n", "<leader>so","<Plug>VimspectorStepOut")
-keymap.set("n", "<leader>jn","<Plug>VimspectorJumpToNextBreakpoint")
-
