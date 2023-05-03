@@ -2,7 +2,31 @@
 -- ===== nvim-dap =====
 -- ====================
 local dapui = require("dapui")
-dapui.setup({})
+dapui.setup({
+layouts = {
+        {
+            -- 将屏幕分为两部分，这是左边的部分
+            -- size里的值是百分比，总和为1，分别占比多少
+            elements = {
+                {id = 'scopes',size = 0.35},
+                {id = "stacks", size = 0.15},
+                {id = "breakpoints", size = 0.15},
+                {id = "repl", size=0.35 }
+            },
+            size = 40,
+            position = "left",
+        },
+        -- 屏幕下方的部分，按照个人习惯，只放监事变量的窗口
+        -- 总大小设为8px
+        {
+            elements = {
+                {id = "watches", size = 1},
+            },
+            size = 8;
+            position = "bottom",
+        }
+    },
+})
 
 local dap = require("dap")
 dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -41,6 +65,8 @@ dap.adapters.codelldb = {
   executable = {
     -- CHANGE THIS to your path!
     command = '/usr/share/codelldb/extension/adapter/codelldb',
+    -- Windows VScode安装codelldb路径：
+    -- command = 'C:\\Users\\用户名\\.vscode\\extensions\\vadimcn.vscode-lldb-1.9.1\\adapter\\codelldb.exe',
     args = {"--port", "${port}"},
   }
 }
