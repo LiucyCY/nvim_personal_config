@@ -30,5 +30,8 @@ require("lazy").setup({
   {'shaunsingh/nord.nvim'},
   {"rebelot/kanagawa.nvim"},
   {'nvim-telescope/telescope.nvim', tag = '0.1.1'},
-  {"nvim-lua/plenary.nvim"}
+  {"nvim-lua/plenary.nvim"},
+  {"Mofiqul/vscode.nvim"},
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  {"p00f/nvim-ts-rainbow"}
 })

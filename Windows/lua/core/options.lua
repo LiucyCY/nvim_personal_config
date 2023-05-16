@@ -4,7 +4,7 @@
 local opt = vim.opt
 -- 行号和相对行号
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 -- tab键
 opt.expandtab = true
 opt.tabstop = 4

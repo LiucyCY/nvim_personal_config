@@ -5,7 +5,8 @@ require("plugins.plugConfig")
 require("plugins.dap")
 
 -- theme
-require("plugins.theme.kanagawa-theme")
+-- require("plugins.theme.kanagawa-theme")
+require("plugins.theme.vsdark-theme")
 -- require("plugins.theme.cat-theme")
 -- require("plugins.theme.nord-theme")
 -- require("plugins.theme.github-theme")
