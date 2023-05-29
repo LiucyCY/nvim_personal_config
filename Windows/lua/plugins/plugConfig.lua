@@ -38,7 +38,7 @@ keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- ====================
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "cuda", "python", "java", "cpp" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "cuda", "python", "java", "cpp", "cmake" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -85,3 +85,42 @@ require'nvim-treesitter.configs'.setup {
     -- termcolors = {} -- table of colour name strings
   }
 }
+
+-- ====================
+-- ==== Code-Runner ===
+-- ====================
+require('code_runner').setup({
+  filetype = {
+    java = {
+      "cd $dir &&",
+      "javac $fileName &&",
+      "java $fileNameWithoutExt"
+    },
+    python = "python3 -u",
+    typescript = "deno run",
+    rust = {
+      "cargo run",
+      -- "cd $dir &&",
+      -- "rustc $fileName &&",
+      -- "$dir/$fileNameWithoutExt"
+    },
+    cpp = {},
+    c = {},
+    cuda = {
+        -- "mkdir build &&",
+        "cd build &&",
+        "cmake .. &&",
+        "cmake --build . &&",
+        "cd Debug &&",
+        "test.exe"
+    },
+  },
+})
+
+vim.keymap.set('n', '<C-r>', ':RunCode<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'rp', ':RunProject<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
