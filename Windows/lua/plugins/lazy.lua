@@ -15,8 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim",
+  {"folke/neoconf.nvim", cmd = "Neoconf" },
+  {"folke/neodev.nvim"},
   {'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
   {'neoclide/coc.nvim', branch = 'release'},
   {'jiangmiao/auto-pairs', lazy=true},

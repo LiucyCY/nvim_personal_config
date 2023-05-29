@@ -99,7 +99,9 @@ require('code_runner').setup({
     python = "python3 -u",
     typescript = "deno run",
     rust = {
-      "cargo run",
+      -- "cargo run",
+      "cargo build &&",
+      "cargo run ",
       -- "cd $dir &&",
       -- "rustc $fileName &&",
       -- "$dir/$fileNameWithoutExt"

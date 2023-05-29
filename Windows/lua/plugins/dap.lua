@@ -86,13 +86,14 @@ dap.configurations.cpp = {
 }
 
 dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
 
 local keymap = vim.keymap
 keymap.set("n", "<S-r>",":lua require'dap'.continue()<CR>")
 keymap.set("n", "<leader>b",":lua require'dap'.toggle_breakpoint()<CR>")
 keymap.set("n", "<leader>B",":lua require'dap'.clear_breakpoint()<CR>")
 keymap.set("n", "<C-i>",":lua require'dap'.step_into()<CR>")
-keymap.set("n", "<S-e>",":lua require'dap'.step_over()<CR>")
+keymap.set("n", "<C-u>",":lua require'dap'.step_over()<CR>")
 keymap.set("n", "<C-t>",":lua require'dap'.step_out()<CR>")
 -- My debugger doesn't support step back and reverse;
 keymap.set("n", "<S-b>",":lua require'dap'.step_back()<CR>")

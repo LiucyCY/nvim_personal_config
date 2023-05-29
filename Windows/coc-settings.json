@@ -4,6 +4,11 @@
     "command": "clangd",
     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
     "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+  },
+  "rust": {
+    "command": "D:/Rust/rust_analyzer/rust-analyzer.exe",
+    "filetypes": ["rust"],
+    "rootPatterns": ["Cargo.toml"]
   }
 },
 "suggest.noselect":true
